@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BLITZ WEB DEV crea paginas web, tiendas online y sistemas personalizados para negocios que quieren vender mas y verse profesionales.">
+<title>BLITZ WEB DEV | Desarrollo Web Premium</title>
+
+<style>
+:root{
+  --bg:#f5f5f7;
+  --white:#ffffff;
+  --black:#1d1d1f;
+  --text:#1d1d1f;
+  --muted:#6e6e73;
+  --line:rgba(0,0,0,.10);
+  --blue:#0071e3;
+  --blue-dark:#005bb5;
+  --card:#ffffff;
+  --soft:#fbfbfd;
+  --shadow:0 24px 70px rgba(0,0,0,.10);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Arial,sans-serif;
+  overflow-x:hidden;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.container{
+  width:min(1180px,calc(100% - 40px));
+  margin:auto;
+}
+
+/* HEADER */
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+  background:rgba(255,255,255,.72);
+  backdrop-filter:saturate(180%) blur(22px);
+  border-bottom:1px solid rgba(0,0,0,.08);
+}
+
+.nav-wrap{
+  height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-weight:700;
+}
+
+.brand-mark{
+  width:36px;
+  height:36px;
+  border-radius:10px;
+  display:grid;
+  place-items:center;
+  background:#111;
+  color:white;
+  font-size:13px;
+  letter-spacing:-.5px;
+}
+
+.brand-title{
+  font-size:16px;
+  letter-spacing:-.2px;
+}
+
+.brand-title span{
+  color:var(--muted);
+  font-weight:500;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:28px;
+}
+
+nav a{
+  color:#424245;
+  font-size:13px;
+  transition:.2s;
+}
+
+nav a:hover{
+  color:#000;
+}
+
+.btn,
+.btn-secondary{
+  min-height:42px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 22px;
+  border-radius:999px;
+  border:none;
+  font-size:14px;
+  font-weight:600;
+  transition:.25s;
+}
+
+.btn{
+  background:var(--blue);
+  color:white;
+  box-shadow:0 10px 24px rgba(0,113,227,.22);
+}
+
+.btn:hover{
+  background:var(--blue-dark);
+  transform:translateY(-2px);
+}
+
+.btn-secondary{
+  background:rgba(0,0,0,.06);
+  color:#1d1d1f;
+}
+
+.btn-secondary:hover{
+  background:rgba(0,0,0,.10);
+  transform:translateY(-2px);
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  padding:130px 0 70px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:70px;
+}
+
+.eyebrow{
+  margin-bottom:18px;
+  color:#86868b;
+  font-size:17px;
+  font-weight:600;
+  letter-spacing:-.2px;
+}
+
+.hero h1{
+  max-width:720px;
+  font-size:clamp(48px,7vw,88px);
+  line-height:.97;
+  letter-spacing:-4px;
+  font-weight:800;
+}
+
+.hero h1 span{
+  display:block;
+  color:#0071e3;
+}
+
+.hero-copy{
+  max-width:620px;
+  margin:28px 0 34px;
+  color:var(--muted);
+  font-size:21px;
+  line-height:1.45;
+  letter-spacing:-.4px;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+
+.trust-row{
+  margin-top:46px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.trust-item{
+  padding:18px;
+  border-radius:22px;
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(0,0,0,.06);
+}
+
+.trust-item strong{
+  display:block;
+  margin-bottom:6px;
+  color:#1d1d1f;
+  font-size:26px;
+  letter-spacing:-1px;
+}
+
+.trust-item span{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.35;
+}
+
+/* DEVICE MOCKUP */
+
+.showcase{
+  position:relative;
+}
+
+.device{
+  padding:14px;
+  border-radius:38px;
+  background:linear-gradient(145deg,#ffffff,#d9d9df);
+  box-shadow:
+    inset 0 0 0 1px rgba(0,0,0,.06),
+    0 34px 80px rgba(0,0,0,.18);
+}
+
+.screen{
+  overflow:hidden;
+  border-radius:28px;
+  background:#0b0b0f;
+  min-height:560px;
+  color:white;
+}
+
+.screen-top{
+  height:52px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 22px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.screen-top span{
+  color:#a1a1a6;
+  font-size:13px;
+}
+
+.dashboard{
+  padding:26px;
+}
+
+.dash-head{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:24px;
+}
+
+.dash-head h2{
+  font-size:28px;
+  letter-spacing:-.8px;
+}
+
+.status-pill{
+  height:30px;
+  padding:0 12px;
+  display:inline-flex;
+  align-items:center;
+  border-radius:999px;
+  background:rgba(48,209,88,.16);
+  color:#30d158;
+  font-size:12px;
+  font-weight:700;
+}
+
+.metric-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.metric{
+  padding:18px;
+  border-radius:22px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.metric span{
+  color:#a1a1a6;
+  font-size:13px;
+}
+
+.metric strong{
+  display:block;
+  margin:8px 0 14px;
+  font-size:32px;
+  letter-spacing:-1px;
+}
+
+.bar{
+  height:7px;
+  overflow:hidden;
+  border-radius:999px;
+  background:rgba(255,255,255,.12);
+}
+
+.bar i{
+  display:block;
+  height:100%;
+  border-radius:inherit;
+  background:linear-gradient(90deg,#0071e3,#64d2ff);
+}
+
+.chart{
+  height:190px;
+  margin-top:18px;
+  display:flex;
+  align-items:end;
+  gap:12px;
+  padding:18px;
+  border-radius:24px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.chart span{
+  flex:1;
+  border-radius:999px 999px 0 0;
+  background:linear-gradient(180deg,#64d2ff,#0071e3);
+}
+
+.floating-note{
+  position:absolute;
+  left:-26px;
+  bottom:42px;
+  width:245px;
+  padding:20px;
+  border-radius:24px;
+  background:rgba(255,255,255,.82);
+  backdrop-filter:blur(22px);
+  box-shadow:var(--shadow);
+  border:1px solid rgba(0,0,0,.06);
+}
+
+.floating-note span{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.floating-note strong{
+  display:block;
+  margin-top:8px;
+  color:var(--black);
+  font-size:19px;
+  line-height:1.25;
+  letter-spacing:-.4px;
+}
+
+/* SECTIONS */
+
+section{
+  padding:105px 0;
+}
+
+.section-head{
+  max-width:780px;
+  margin:0 auto 48px;
+  text-align:center;
+}
+
+.section-head h2{
+  font-size:clamp(40px,5vw,64px);
+  line-height:1;
+  letter-spacing:-2.8px;
+  font-weight:800;
+}
+
+.section-head p{
+  margin-top:18px;
+  color:var(--muted);
+  font-size:20px;
+  line-height:1.45;
+  letter-spacing:-.3px;
+}
+
+/* SERVICES */
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.service-card{
+  min-height:290px;
+  padding:28px;
+  border-radius:30px;
+  background:var(--card);
+  box-shadow:0 16px 40px rgba(0,0,0,.06);
+  border:1px solid rgba(0,0,0,.05);
+  transition:.25s;
+}
+
+.service-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 28px 70px rgba(0,0,0,.10);
+}
+
+.service-tag{
+  width:46px;
+  height:46px;
+  margin-bottom:38px;
+  display:grid;
+  place-items:center;
+  border-radius:15px;
+  background:#f5f5f7;
+  color:var(--blue);
+  font-weight:800;
+}
+
+.service-card h3{
+  margin-bottom:12px;
+  font-size:24px;
+  letter-spacing:-.6px;
+}
+
+.service-card p{
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.55;
+}
+
+.service-card small{
+  display:block;
+  margin-top:26px;
+  color:#1d1d1f;
+  font-weight:700;
+}
+
+/* PROJECTS */
+
+.projects{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.project-card{
+  overflow:hidden;
+  border-radius:32px;
+  background:var(--card);
+  box-shadow:0 16px 40px rgba(0,0,0,.06);
+  border:1px solid rgba(0,0,0,.05);
+  transition:.25s;
+}
+
+.project-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 28px 70px rgba(0,0,0,.10);
+}
+
+.project-visual{
+  height:230px;
+  padding:22px;
+  background:linear-gradient(145deg,#f5f5f7,#e8e8ed);
+}
+
+.mock-window{
+  height:100%;
+  overflow:hidden;
+  border-radius:24px;
+  background:#111;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);
+}
+
+.mock-window::before{
+  content:"";
+  display:block;
+  height:36px;
+  background:rgba(255,255,255,.08);
+}
+
+.mock-lines{
+  height:calc(100% - 36px);
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:14px;
+  padding:16px;
+}
+
+.mock-lines div{
+  border-radius:18px;
+  background:linear-gradient(180deg,#2c2c2e,#1c1c1e);
+}
+
+.mock-lines div:nth-child(2){
+  background:linear-gradient(180deg,#0071e3,#64d2ff);
+}
+
+.project-info{
+  padding:26px;
+}
+
+.project-info span{
+  color:var(--blue);
+  font-size:12px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.project-info h3{
+  margin:8px 0 10px;
+  font-size:25px;
+  letter-spacing:-.6px;
+}
+
+.project-info p{
+  color:var(--muted);
+  line-height:1.55;
+  font-size:15px;
+}
+
+/* PROCESS */
+
+.process{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.process-step{
+  min-height:250px;
+  padding:28px;
+  border-radius:30px;
+  background:#ffffff;
+  border:1px solid rgba(0,0,0,.05);
+  box-shadow:0 16px 40px rgba(0,0,0,.06);
+}
+
+.process-step strong{
+  color:var(--blue);
+  font-size:14px;
+}
+
+.process-step h3{
+  margin:34px 0 12px;
+  font-size:24px;
+  letter-spacing:-.6px;
+}
+
+.process-step p{
+  color:var(--muted);
+  line-height:1.55;
+  font-size:15px;
+}
+
+/* CONTACT */
+
+.contact-panel{
+  padding:64px;
+  border-radius:36px;
+  background:#111;
+  color:white;
+  display:grid;
+  grid-template-columns:1fr auto;
+  align-items:center;
+  gap:34px;
+  box-shadow:0 34px 90px rgba(0,0,0,.20);
+}
+
+.contact-panel h2{
+  max-width:780px;
+  font-size:clamp(38px,5vw,64px);
+  line-height:1;
+  letter-spacing:-2.5px;
+}
+
+.contact-panel p{
+  max-width:680px;
+  margin-top:18px;
+  color:#a1a1a6;
+  font-size:19px;
+  line-height:1.45;
+}
+
+.socials{
+  margin-top:26px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.socials a{
+  padding:10px 16px;
+  border-radius:999px;
+  background:rgba(255,255,255,.10);
+  color:white;
+  font-size:14px;
+  font-weight:600;
+  transition:.2s;
+}
+
+.socials a:hover{
+  background:rgba(255,255,255,.18);
+}
+
+footer{
+  padding:36px 0;
+  color:#86868b;
+  font-size:13px;
+}
+
+.footer-row{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  border-top:1px solid rgba(0,0,0,.08);
+  padding-top:24px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1020px){
+  .hero{
+    grid-template-columns:1fr;
+    padding-top:120px;
+  }
+
+  .showcase{
+    max-width:680px;
+    margin:auto;
+  }
+
+  .services,
+  .process{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .projects{
+    grid-template-columns:1fr;
+  }
+
+  .contact-panel{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:760px){
+  .container{
+    width:min(100% - 28px,1180px);
+  }
+
+  nav{
+    display:none;
+  }
+
+  .nav-wrap{
+    height:62px;
+  }
+
+  .brand-title{
+    font-size:14px;
+  }
+
+  .hero{
+    padding-top:110px;
+    gap:44px;
+  }
+
+  .hero h1{
+    letter-spacing:-2px;
+  }
+
+  .hero-copy{
+    font-size:18px;
+  }
+
+  .hero-actions,
+  .hero-actions a{
+    width:100%;
+  }
+
+  .trust-row,
+  .metric-grid,
+  .services,
+  .process{
+    grid-template-columns:1fr;
+  }
+
+  .screen{
+    min-height:auto;
+  }
+
+  .floating-note{
+    position:static;
+    width:100%;
+    margin-top:18px;
+  }
+
+  section{
+    padding:72px 0;
+  }
+
+  .contact-panel{
+    padding:34px 24px;
+  }
+
+  .footer-row{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav-wrap">
+    <a class="brand" href="#inicio">
+      <div class="brand-mark" style="width:42px;height:42px;overflow:hidden;border-radius:12px;">
+  <img 
+    src="https://i.pinimg.com/736x/c7/2f/10/c72f1023b159fa5f02f3a1d69e0a6179.jpg" 
+    alt="BLITZ Logo"
+    style="width:100%;height:100%;object-fit:cover;"
+  >
+</div>
+      <div class="brand-title">BLITZ <span>WEB DEV</span></div>
+    </a>
+
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <a class="btn" href="https://wa.me/5217820000000" target="_blank">Cotizar</a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero container" id="inicio">
+  <div>
+    <p class="eyebrow">Desarrollo web premium</p>
+
+    <h1>
+      Sitios web simples.
+      <span>Resultados grandes.</span>
+    </h1>
+
+    <p class="hero-copy">
+      Creamos paginas web, tiendas online y sistemas personalizados con diseño limpio,
+      velocidad y una experiencia premium para tus clientes.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn" href="#proyectos">Ver proyectos</a>
+      <a class="btn-secondary" href="https://wa.me/5217820000000" target="_blank">Hablar por WhatsApp</a>
+    </div>
+
+    <div class="trust-row">
+      <div class="trust-item">
+        <strong>7 dias</strong>
+        <span>landing lista para publicar</span>
+      </div>
+
+      <div class="trust-item">
+        <strong>100%</strong>
+        <span>adaptado a celular y computadora</span>
+      </div>
+
+      <div class="trust-item">
+        <strong>24/7</strong>
+        <span>soporte y mantenimiento disponible</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="showcase">
+    <div class="device">
+      <div class="screen">
+        <div class="screen-top">
+          <strong>BLITZ Dashboard</strong>
+          <span>Online</span>
+        </div>
+
+        <div class="dashboard">
+          <div class="dash-head">
+            <div>
+              <h2>Panel de ventas</h2>
+              <p style="color:#a1a1a6;margin-top:7px;font-size:14px;">Rendimiento en tiempo real</p>
+            </div>
+            <span class="status-pill">Activo</span>
+          </div>
+
+          <div class="metric-grid">
+            <div class="metric">
+              <span>Conversion</span>
+              <strong>+38%</strong>
+              <div class="bar"><i style="width:78%"></i></div>
+            </div>
+
+            <div class="metric">
+              <span>Pedidos</span>
+              <strong>1,204</strong>
+              <div class="bar"><i style="width:64%"></i></div>
+            </div>
+
+            <div class="metric">
+              <span>Clientes</span>
+              <strong>860</strong>
+              <div class="bar"><i style="width:72%"></i></div>
+            </div>
+
+            <div class="metric">
+              <span>Respuesta</span>
+              <strong>1.8s</strong>
+              <div class="bar"><i style="width:88%"></i></div>
+            </div>
+          </div>
+
+          <div class="chart">
+            <span style="height:40%"></span>
+            <span style="height:58%"></span>
+            <span style="height:50%"></span>
+            <span style="height:74%"></span>
+            <span style="height:62%"></span>
+            <span style="height:86%"></span>
+            <span style="height:78%"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="floating-note">
+      <span>Proyecto recomendado</span>
+      <strong>Landing + WhatsApp + catalogo listo para cotizar</strong>
+    </div>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="container">
+    <div class="section-head">
+      <h2>Servicios diseñados para crecer.</h2>
+      <p>Soluciones claras, modernas y faciles de usar para negocios que quieren vender mejor.</p>
+    </div>
+
+    <div class="services">
+      <article class="service-card">
+        <div class="service-tag">01</div>
+        <h3>Paginas web</h3>
+        <p>Landing pages y sitios corporativos con diseño limpio, rapido y profesional.</p>
+        <small>Ideal para negocios locales</small>
+      </article>
+
+      <article class="service-card">
+        <div class="service-tag">02</div>
+        <h3>Tiendas online</h3>
+        <p>Catalogos, productos, pedidos y pagos para vender desde cualquier dispositivo.</p>
+        <small>Preparado para crecer</small>
+      </article>
+
+      <article class="service-card">
+        <div class="service-tag">03</div>
+        <h3>Sistemas a medida</h3>
+        <p>Paneles administrativos, reportes, inventarios y automatizaciones para ahorrar tiempo.</p>
+        <small>Hecho para tu operacion</small>
+      </article>
+
+      <article class="service-card">
+        <div class="service-tag">04</div>
+        <h3>Mantenimiento</h3>
+        <p>Actualizaciones, soporte tecnico y mejoras continuas para mantener tu sitio estable.</p>
+        <small>Soporte mensual</small>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="proyectos">
+  <div class="container">
+    <div class="section-head">
+      <h2>Proyectos con presencia premium.</h2>
+      <p>Diseños pensados para verse bien, cargar rapido y convertir visitas en clientes.</p>
+    </div>
+
+    <div class="projects">
+      <a class="project-card" href="https://vicencioosvaldo17-wq.github.io/Kronos.com/" target="_blank">
+        <div class="project-visual">
+          <div class="mock-window">
+            <div class="mock-lines"><div></div><div></div></div>
+          </div>
+        </div>
+        <div class="project-info">
+          <span>E-commerce</span>
+          <h3>Tienda Kronos</h3>
+          <p>Catalogo premium con enfoque en producto, confianza y conversion desde celular.</p>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://vicencioosvaldo17-wq.github.io/StormClubBasquetbol.com/" target="_blank">
+        <div class="project-visual">
+          <div class="mock-window">
+            <div class="mock-lines"><div></div><div></div></div>
+          </div>
+        </div>
+        <div class="project-info">
+          <span>Deporte</span>
+          <h3>Club Storm Basquetball</h3>
+          <p>Pagina llamativa, ubicacion, horarios y contacto directo para entrenamientos.</p>
+        </div>
+      </a>
+
+      <a class="project-card" href="https://tiktok.com" target="_blank">
+        <div class="project-visual">
+          <div class="mock-window">
+            <div class="mock-lines"><div></div><div></div></div>
+          </div>
+        </div>
+        <div class="project-info">
+          <span>Dashboard</span>
+          <h3>Panel empresarial</h3>
+          <p>Sistema administrativo con metricas, usuarios, pedidos y reportes operativos.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="proceso">
+  <div class="container">
+    <div class="section-head">
+      <h2>Un proceso simple.</h2>
+      <p>De la idea al lanzamiento con orden, claridad y una experiencia profesional.</p>
+    </div>
+
+    <div class="process">
+      <div class="process-step">
+        <strong>01</strong>
+        <h3>Diagnostico</h3>
+        <p>Entendemos tu negocio, tus clientes y el objetivo principal de la pagina.</p>
+      </div>
+
+      <div class="process-step">
+        <strong>02</strong>
+        <h3>Diseno</h3>
+        <p>Definimos estructura, contenido, llamadas a la accion y experiencia movil.</p>
+      </div>
+
+      <div class="process-step">
+        <strong>03</strong>
+        <h3>Desarrollo</h3>
+        <p>Construimos el sitio con buena velocidad, responsive y detalles profesionales.</p>
+      </div>
+
+      <div class="process-step">
+        <strong>04</strong>
+        <h3>Lanzamiento</h3>
+        <p>Publicamos, conectamos dominio y dejamos todo listo para compartir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="container">
+    <div class="contact-panel">
+      <div>
+        <h2>Listo para una web que se vea premium?</h2>
+        <p>Cuéntame que necesitas y te propongo una solucion clara para tu negocio.</p>
+
+        <div class="socials">
+          <a href="https://instagram.com/TUUSUARIO" target="_blank">Instagram</a>
+          <a href="https://facebook.com/TUUSUARIO" target="_blank">Facebook</a>
+          <a href="https://tiktok.com/@TUUSUARIO" target="_blank">TikTok</a>
+          <a href="https://youtube.com/@TUUSUARIO" target="_blank">YouTube</a>
+        </div>
+      </div>
+
+     <a class="btn" href="https://wa.me" target="_blank" rel="noopener">Cotizar ahora</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <p>Copyright 2026 BLITZ WEB DEV. Tecnologia que impulsa negocios.</p>
+    <p>Paginas web | Tiendas online | Sistemas personalizados</p>
+  </div>
+</footer>
+
+</body>
+</html>
